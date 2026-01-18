@@ -22,7 +22,7 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 -- LSP, autocomplete
 Plug('neovim/nvim-lspconfig')
 
--- something
+-- nvim cmp
 Plug('hrsh7th/cmp-buffer') 
 Plug('hrsh7th/cmp-path')
 Plug('hrsh7th/cmp-cmdline') 
@@ -47,4 +47,4 @@ require "cmp_config"
 vim.lsp.enable('gopls')
 
 -- command line abbreviations
-vim.keymap.set("ca", "tree", "NvimTreeOpen")
+vim.keymap.set("ca", "nto", "NvimTreeOpen")
