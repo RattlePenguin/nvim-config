@@ -45,6 +45,8 @@ require "cmp_config"
 
 -- LSP enable configurations
 vim.lsp.enable('gopls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('csharp_ls')
 
 -- command line abbreviations
 vim.keymap.set("ca", "nto", "NvimTreeOpen")
