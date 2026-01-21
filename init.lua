@@ -50,3 +50,4 @@ vim.lsp.enable('csharp_ls')
 
 -- command line abbreviations
 vim.keymap.set("ca", "nto", "NvimTreeOpen")
+vim.keymap.set("ca", "ntc", "NvimTreeClose")
