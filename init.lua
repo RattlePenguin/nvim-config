@@ -23,16 +23,22 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug('neovim/nvim-lspconfig')
 
 -- nvim cmp
-Plug('hrsh7th/cmp-buffer') 
+Plug('hrsh7th/cmp-buffer')
 Plug('hrsh7th/cmp-path')
-Plug('hrsh7th/cmp-cmdline') 
+Plug('hrsh7th/cmp-cmdline')
 Plug('hrsh7th/nvim-cmp')
-Plug('hrsh7th/cmp-nvim-lsp') 
+Plug('hrsh7th/cmp-nvim-lsp')
 Plug('hrsh7th/cmp-nvim-lsp-signature-help')
+
+-- luasnip and friendly-snippets
+-- follow latest release and install jsregexp.
+Plug('saadparwaiz1/cmp_luasnip')
+Plug('rafamadriz/friendly-snippets')
+Plug('L3MON4D3/LuaSnip', { ['tag'] = 'v2.*', ['do'] = 'make install_jsregexp'})
 
 vim.call('plug#end')
 
-home = os.getenv("HOME")
+local home = os.getenv("HOME")
 package.path = home .. "/.config/nvim/?.lua;" .. package.path
 
 require "common"
@@ -47,7 +53,11 @@ require "cmp_config"
 vim.lsp.enable('gopls')
 vim.lsp.enable('clangd')
 vim.lsp.enable('csharp_ls')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('html')
+vim.lsp.enable('ts_ls')
 
 -- command line abbreviations
 vim.keymap.set("ca", "nto", "NvimTreeOpen")
 vim.keymap.set("ca", "ntc", "NvimTreeClose")
+

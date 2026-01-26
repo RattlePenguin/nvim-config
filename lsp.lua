@@ -12,9 +12,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     local bufnr = ev.buf
     local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    
+
     vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
-    
+
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format({ async = false })
     end, bufopts)
-    
+
     if client then
       print(string.format('✓ LSP attached: %s (buffer %d)', client.name, bufnr))
     end
