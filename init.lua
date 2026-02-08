@@ -56,6 +56,7 @@ vim.lsp.enable('csharp_ls')
 vim.lsp.enable('lua_ls')
 vim.lsp.enable('html')
 vim.lsp.enable('ts_ls')
+vim.lsp.enable('css_ls')
 
 -- command line abbreviations
 vim.keymap.set("ca", "nto", "NvimTreeOpen")
