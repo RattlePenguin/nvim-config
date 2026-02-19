@@ -1,4 +1,4 @@
-require'barbar'.setup {
+require("barbar").setup {
 	animation = true,
 	clickable = true,
 	exclude_ft = {'javascript'},
@@ -50,3 +50,5 @@ require'barbar'.setup {
 	letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
 	no_name_title = nil,
 }
+
+print("barbar loaded")

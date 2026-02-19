@@ -41,13 +41,13 @@ vim.call('plug#end')
 local home = os.getenv("HOME")
 package.path = home .. "/.config/nvim/?.lua;" .. package.path
 
-require "common"
-require "theme"
-require "vimtree"
-require "barbar"
-require "lua_line"
-require "lsp"
-require "cmp_config"
+require("common")
+require("theme")
+require("vimtree")
+require("barbar")
+require("lua_line")
+require("lsp")
+require("cmp_config")
 
 -- LSP enable configurations
 vim.lsp.enable('gopls')
@@ -61,4 +61,15 @@ vim.lsp.enable('css_ls')
 -- command line abbreviations
 vim.keymap.set("ca", "nto", "NvimTreeOpen")
 vim.keymap.set("ca", "ntc", "NvimTreeClose")
+
+-- Mappings
+local opts = { noremap = true, silent = true }
+
+-- Move to previous/next
+vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+
+-- Re-order to previous/next
+vim.keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+vim.keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 
